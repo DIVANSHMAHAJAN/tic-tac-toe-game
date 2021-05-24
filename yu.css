@@ -1,0 +1,154 @@
+*
+{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	font-family: sans-serif;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	color:#545454;
+	/*height:  600px;*/
+}
+.board {
+  width: 100vw;
+  
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto)
+  }
+.game
+{
+	display: grid;
+	background-color: #0D8192;
+	grid-template-columns: repeat(3,auto);
+    grid-gap: 15px;
+    margin-top: 50px;
+    /*grid-template-rows: repeat(3,1fr);*/
+}
+.game-cell
+{
+	cursor: pointer;
+	background-color:#14BDAC;
+	height: 100px;
+	text-align: center;
+	width:100px;
+}
+.x,.o
+{
+	cursor:default;
+}
+.x::after
+{
+	content:'x';
+	color:yellow;
+	font-size: 100px;
+}
+.o::after
+{
+	content: 'o';
+	color:white;
+	font-size: 100px;
+}
+.status span
+{
+	color:white;
+}
+.status-action
+{
+	margin-top: 25px;
+	display: flex;
+	justify-content:space-around;
+}
+.won::after
+{
+	color:red;
+}
+.reset
+{
+	cursor: pointer;
+}
+.reset:hover
+{
+	color:red;
+}
+.title
+{
+	text-align: center;
+	
+}
+.title span
+{
+	color:white;
+}
+.container
+{
+	background-color: #14BDAC;
+	margin: 50px;
+	padding: 50px;
+	border-radius: 30px;
+}
+.status
+{
+	color: white;
+  font-size: 2rem;
+}
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: .25em .5em;
+  cursor: pointer;
+}
+
+.winning-message button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.winning-message.show {
+  display: flex;
+}
+@media (max-width:900px)
+{
+.game
+{
+	margin-top:25px;
+	grid-gap: 10px;
+}
+.game-cell
+{
+	height: 150px;
+	width:150px;
+}
+.x::after
+{
+	font-size: 150px;
+}
+.o::after
+{
+	font-size: 175px;
+}
+}
